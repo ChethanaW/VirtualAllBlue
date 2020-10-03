@@ -1,14 +1,16 @@
+
 var scene, camera, renderer;
 
-scene = new THREE.Scene()
-scene.background = new THREE.Color(0xdddddd)
+scene = new THREE.Scene();
 
-camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight,1,5000)
+scene.background = new THREE.Color(0xdddddd);
+
+camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight,1,5000);
 // camera.rotation.y = 45/180*Math.PI
 // camera.position.x = 800
 // camera.position.y = 100
 // camera.position.z = 1000
-camera.position.set(0,100,1000)
+camera.position.set(0,100,1000);
 
 
 
@@ -37,14 +39,14 @@ camera.position.set(0,100,1000)
 // scene.add(light4)
 
 
-// renderer = new THREE.WebGLRenderer({antialias: true})
-renderer = new THREE.WebGLRenderer()
+renderer = new THREE.WebGLRenderer({antialias: true});
+// renderer = new THREE.WebGLRenderer()
 renderer.setClearColor(0x808080);
-renderer.setSize(window.innerWidth, window.innerHeight)
+renderer.setSize(window.innerWidth, window.innerHeight);
 // $('body').append(renderer.domElement);
 
 // controls = new THREE.OrbitControls(camera, renderer.domElement);
-document.body.appendChild(renderer.domElement)
+document.body.appendChild(renderer.domElement);
 
 // window.addEventListener('resize',function(){
 //     renderer.setSize(window.innerWidth, window.innerHeight)
@@ -53,11 +55,12 @@ document.body.appendChild(renderer.domElement)
 var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
 scene.add( light );
 
-let loader = new THREE.GLTFLoader()
-loader.load('scene.gltf', function(gltf){
-    // car = gltf.scene.children[0]
-    // car.scale.set(0.5, 0.5, 0.5)
-    scene.add(gltf.scene)
+let loader = new THREE.GLTFLoader();
+loader.load('./scene.gltf', function(gltf){
+    car = gltf.scene.children[0];
+    car.scale.set(0.5, 0.5, 0.5);
+    scene.add(gltf.scene);
+    console.error( 'An error happened', error );
     // animate();
 
 })
@@ -68,7 +71,7 @@ function animate(){
 }
 
 
-animate()
+animate();
 
 
 // }//init function end
