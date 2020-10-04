@@ -6,16 +6,16 @@ scene = new THREE.Scene();
 scene.background = new THREE.Color(0xdddddd);
 
 camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight,1,5000);
-// camera.rotation.y = 45/180*Math.PI
-// camera.position.x = 800
-// camera.position.y = 100
-// camera.position.z = 1000
-camera.position.set(0,100,1000);
+camera.rotation.y = 45/180*Math.PI
+camera.position.x = 800
+camera.position.y = 100
+camera.position.z = 1000
+// camera.position.set(0,100,1000);
 
 
 
-// var hlight = new THREE.AmbientLight(0x404040, 100)
-// scene.add(hlight)
+var hlight = new THREE.AmbientLight(0x404040, 0)
+scene.add(hlight)
 
 // directionalLight = new THREE.DirectionalLight(0xffffff, 100)
 // directionalLight.position.set(0,1,0)
@@ -45,7 +45,7 @@ renderer.setClearColor(0x808080);
 renderer.setSize(window.innerWidth, window.innerHeight);
 // $('body').append(renderer.domElement);
 
-// controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls = new THREE.OrbitControls(camera, renderer.domElement);
 document.body.appendChild(renderer.domElement);
 
 // window.addEventListener('resize',function(){
@@ -54,9 +54,12 @@ document.body.appendChild(renderer.domElement);
 // })
 var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
 scene.add( light );
+// https://raw.githubusercontent.com/ChethanaW/VirtualAllBlue/master/scene.gltf
+
+// https://threejsfundamentals.org/threejs/resources/models/cartoon_lowpoly_small_city_free_pack/scene.gltf
 
 let loader = new THREE.GLTFLoader();
-loader.load('https://raw.githubusercontent.com/ChethanaW/VirtualAllBlue/master/scene.gltf', function(gltf){
+loader.load('https://threejsfundamentals.org/threejs/resources/models/cartoon_lowpoly_small_city_free_pack/scene.gltf', function(gltf){
     car = gltf.scene.children[0];
     car.scale.set(0.5, 0.5, 0.5);
     scene.add(gltf.scene);

@@ -2,13 +2,21 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <!-- <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"> -->
-    <script src="jquery-2.1.4.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- <script src="jquery-2.1.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" /> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Loads <model-viewer> for modern browsers: -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
   </head>
   <body>
+
     <h1>Space App Challenge 2020 : Virtual Planetary Exploration</h1>
     <h3>Team: VirtualAllBlue</h3>
+
+
 
     <p>Space App Challenge 2020:
         Virtual Planetary Exploration Your challenge is to create interactive 3D models of equipment 
@@ -20,5 +28,11 @@
     <script src="script.js"></script>
     <h1>My First Heading</h1>
     <p>testing 2nd</p>
+
+    <model-viewer src="https://threejsfundamentals.org/threejs/resources/models/cartoon_lowpoly_small_city_free_pack/scene.gltf"
+              auto-rotate camera-controls
+              alt="A 3D model of a damaged sci-fi helmet">
+</model-viewer>
+
   </body>
 </html>
